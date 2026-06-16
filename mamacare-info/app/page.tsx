@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import PhoneMockup from "@/components/PhoneMockup";
-import Footer from "@/components/Footer";
 
 const P5Background = dynamic(() => import("@/components/P5Background"), { ssr: false });
 
@@ -41,138 +40,352 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          padding: "80px 40px 100px",
-          gap: "48px",
+          justifyContent: "flex-start",
+          padding: "40px 40px 100px",
+          gap: "80px",
         }}
       >
-        {/* Header text */}
-        <div style={{ textAlign: "center" }}>
+        <section
+          style={{
+            width: "100%",
+            maxWidth: "1200px",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "40px",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <p
+              style={{
+                display: "inline-block",
+                background: "rgba(22,163,74,0.12)",
+                border: "1px solid rgba(22,163,74,0.3)",
+                borderRadius: "999px",
+                padding: "6px 18px",
+                fontSize: "12px",
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 600,
+                color: "var(--green)",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                marginBottom: "24px",
+              }}
+            >
+              Welcome to MamaCare
+            </p>
+            <h1
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(2.4rem, 5vw, 4rem)",
+                lineHeight: 1.05,
+                color: "var(--fg)",
+                marginBottom: "24px",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Your trusted partner for health, family, and community support.
+            </h1>
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "clamp(16px, 2vw, 18px)",
+                color: "var(--muted)",
+                maxWidth: "620px",
+                lineHeight: 1.75,
+                marginBottom: "32px",
+              }}
+            >
+              MamaCare brings essential guidance, trusted resources, and easy access to care services for mothers and families in one simple experience.
+            </p>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <a
+                href="#download"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: "160px",
+                  padding: "14px 24px",
+                  borderRadius: "14px",
+                  background: "var(--green)",
+                  color: "#fff",
+                  textDecoration: "none",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  transition: "transform 0.2s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+              >
+                Learn More
+              </a>
+              <a
+                href="mailto:contact@mamacare.ng"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: "160px",
+                  padding: "14px 24px",
+                  borderRadius: "14px",
+                  background: "rgba(22,163,74,0.08)",
+                  color: "var(--fg)",
+                  textDecoration: "none",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  transition: "transform 0.2s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+
           <div
             style={{
-              display: "inline-block",
-              background: "rgba(22,163,74,0.12)",
-              border: "1px solid rgba(22,163,74,0.3)",
-              borderRadius: "999px",
-              padding: "4px 16px",
-              fontSize: "12px",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 600,
-              color: "var(--green)",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              marginBottom: "20px",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            Now Available
+            <img
+              src="/globe.svg"
+              alt="MamaCare illustration"
+              style={{
+                width: "100%",
+                maxWidth: "520px",
+                borderRadius: "28px",
+                boxShadow: "0 35px 90px rgba(0,0,0,0.12)",
+              }}
+            />
           </div>
-          <h1
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              lineHeight: 1.1,
-              color: "var(--fg)",
-              marginBottom: "14px",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Download <span style={{ color: "var(--green)" }}>AppName</span>
-          </h1>
-          <p
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(14px, 2vw, 17px)",
-              color: "var(--muted)",
-              maxWidth: "420px",
-              lineHeight: 1.6,
-            }}
-          >
-            Available on iOS and Android. Get started in seconds.
-          </p>
-        </div>
+        </section>
 
-        {/* Phone mockups */}
-        <div
+        <section
           style={{
-            display: "flex",
-            gap: "clamp(32px, 6vw, 80px)",
-            alignItems: "flex-end",
+            width: "100%",
+            maxWidth: "1200px",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "40px",
+            alignItems: "center",
           }}
         >
-          <PhoneMockup platform="ios" />
-          <PhoneMockup platform="android" />
-        </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+              padding: "32px",
+              borderRadius: "24px",
+              background: "rgba(255,255,255,0.85)",
+              boxShadow: "0 30px 80px rgba(22,163,74,0.08)",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "1.6rem",
+                lineHeight: 1.1,
+                color: "var(--fg)",
+              }}
+            >
+              About MamaCare
+            </p>
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "1rem",
+                color: "var(--muted)",
+                lineHeight: 1.75,
+              }}
+            >
+              MamaCare is built to support families with trusted health advice, local service connections, and community wellbeing tools. Our mission is to make care easier to find and more reliable for every home.
+            </p>
+            <ul style={{ paddingLeft: "20px", color: "var(--muted)", fontFamily: "'Inter', sans-serif", lineHeight: 1.8 }}>
+              <li>Personalized support for mothers and families</li>
+              <li>Resources for pregnancy, childcare, and wellbeing</li>
+              <li>Trusted local care providers and community guidance</li>
+            </ul>
+          </div>
 
-        {/* Download buttons */}
-        <div
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="/window.svg"
+              alt="About MamaCare features"
+              style={{
+                width: "100%",
+                maxWidth: "520px",
+                borderRadius: "28px",
+                boxShadow: "0 35px 90px rgba(0,0,0,0.12)",
+              }}
+            />
+          </div>
+        </section>
+
+        <section
+          id="download"
           style={{
+            width: "100%",
+            maxWidth: "1200px",
             display: "flex",
-            gap: "16px",
-            flexWrap: "wrap",
-            justifyContent: "center",
+            flexDirection: "column",
+            gap: "40px",
+            textAlign: "center",
           }}
         >
-          <a
-            href="#"
+          <div>
+            <p
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "1.6rem",
+                color: "var(--green)",
+                marginBottom: "16px",
+              }}
+            >
+              Download MamaCare
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                lineHeight: 1.1,
+                color: "var(--fg)",
+                marginBottom: "18px",
+              }}
+            >
+              Get the app for iOS and Android
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "clamp(15px, 1.5vw, 17px)",
+                color: "var(--muted)",
+                maxWidth: "720px",
+                margin: "0 auto",
+                lineHeight: 1.7,
+              }}
+            >
+              Download MamaCare to access care advice, service recommendations, and local support wherever you are.
+            </p>
+          </div>
+
+          <div
             style={{
-              display: "flex",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
               alignItems: "center",
-              gap: "10px",
-              background: "var(--fg)",
-              color: "var(--bg)",
-              padding: "13px 26px",
-              borderRadius: "12px",
-              textDecoration: "none",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 600,
-              fontSize: "14px",
-              transition: "all 0.2s ease",
-              border: "2px solid transparent",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "var(--green)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "var(--fg)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "var(--bg)";
             }}
           >
-            <AppleIcon /> App Store
-          </a>
-          <a
-            href="#"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              background: "transparent",
-              color: "var(--fg)",
-              padding: "13px 26px",
-              borderRadius: "12px",
-              textDecoration: "none",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 600,
-              fontSize: "14px",
-              transition: "all 0.2s ease",
-              border: "2px solid var(--border)",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--green)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "var(--green)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--border)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "var(--fg)";
-            }}
-          >
-            <PlayIcon /> Google Play
-          </a>
-        </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  gap: "16px",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                }}
+              >
+                <a
+                  href="#"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    background: "var(--fg)",
+                    color: "var(--bg)",
+                    padding: "13px 26px",
+                    borderRadius: "12px",
+                    textDecoration: "none",
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "14px",
+                    transition: "all 0.2s ease",
+                    border: "2px solid transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = "var(--green)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = "var(--fg)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "var(--bg)";
+                  }}
+                >
+                  <AppleIcon /> App Store
+                </a>
+                <a
+                  href="#"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    background: "transparent",
+                    color: "var(--fg)",
+                    padding: "13px 26px",
+                    borderRadius: "12px",
+                    textDecoration: "none",
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "14px",
+                    transition: "all 0.2s ease",
+                    border: "2px solid var(--border)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--green)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "var(--green)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--border)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "var(--fg)";
+                  }}
+                >
+                  <PlayIcon /> Google Play
+                </a>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src="/icon.png"
+                alt="MamaCare download preview"
+                style={{
+                  width: "100%",
+                  maxWidth: "420px",
+                  borderRadius: "28px",
+                  boxShadow: "0 35px 90px rgba(0,0,0,0.12)",
+                }}
+              />
+            </div>
+          </div>
+        </section>
       </div>
-
-      <Footer />
     </main>
   );
 }

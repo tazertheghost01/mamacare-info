@@ -1,7 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import Footer from "@/components/Footer";
-import Link from "next/link";
 
 export default function PrivacyPage() {
   useEffect(() => {
@@ -66,46 +64,6 @@ export default function PrivacyPage() {
         paddingBottom: "100px",
       }}
     >
-      <nav
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 40,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "18px 40px",
-          borderBottom: "1px solid var(--border)",
-          background: "var(--bg)",
-        }}
-      >
-        <Link
-          href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            color: "var(--green)",
-            textDecoration: "none",
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 600,
-            fontSize: "15px",
-          }}
-        >
-          ← Back
-        </Link>
-        <span
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: "16px",
-            color: "var(--fg)",
-          }}
-        >
-          🌿 AppName
-        </span>
-      </nav>
-
       <div
         style={{
           maxWidth: "720px",
@@ -178,8 +136,6 @@ export default function PrivacyPage() {
           ))}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

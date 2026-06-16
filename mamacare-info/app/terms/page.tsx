@@ -1,7 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import Footer from "@/components/Footer";
-import Link from "next/link";
 
 export default function TermsPage() {
   useEffect(() => {
@@ -66,47 +64,6 @@ export default function TermsPage() {
         paddingBottom: "100px",
       }}
     >
-      {/* Top nav */}
-      <nav
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 40,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "18px 40px",
-          borderBottom: "1px solid var(--border)",
-          background: "var(--bg)",
-        }}
-      >
-        <Link
-          href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            color: "var(--green)",
-            textDecoration: "none",
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 600,
-            fontSize: "15px",
-          }}
-        >
-          ← Back
-        </Link>
-        <span
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: "16px",
-            color: "var(--fg)",
-          }}
-        >
-          🌿 AppName
-        </span>
-      </nav>
-
       {/* Content */}
       <div
         style={{
@@ -180,8 +137,6 @@ export default function TermsPage() {
           ))}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
