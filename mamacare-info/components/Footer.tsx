@@ -6,10 +6,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
+        position: "relative",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -21,7 +18,7 @@ export default function Footer() {
       }}
     >
       <p style={{ fontSize: "13px", color: "var(--muted)", fontFamily: "'Inter', sans-serif" }}>
-        © {new Date().getFullYear()} AppName Ltd. All rights reserved.
+        © {new Date().getFullYear()} MamaCare Ltd. All rights reserved.
       </p>
 
       <nav style={{ display: "flex", gap: "24px", alignItems: "center" }}>

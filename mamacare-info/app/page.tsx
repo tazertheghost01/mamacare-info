@@ -77,7 +77,7 @@ export default function Home() {
               letterSpacing: "-0.02em",
             }}
           >
-            Download <span style={{ color: "var(--green)" }}>AppName</span>
+            Download <span style={{ color: "var(--green)" }}>MamaCare</span>
           </h1>
           <p
             style={{

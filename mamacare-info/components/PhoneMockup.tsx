@@ -101,7 +101,16 @@ export default function PhoneMockup({ platform }: PhoneMockupProps) {
               boxShadow: "0 4px 20px rgba(22,163,74,0.5)",
             }}
           >
-            <span style={{ fontSize: "28px" }}>🌿</span>
+            <img
+              src="/logo.png"
+              alt="App logo"
+              style={{
+                width: "36px",
+                height: "36px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </div>
           <p
             style={{
@@ -112,7 +121,7 @@ export default function PhoneMockup({ platform }: PhoneMockupProps) {
               letterSpacing: "0.05em",
             }}
           >
-            AppName
+            MamaCare
           </p>
           {/* Fake screen lines */}
           {[...Array(4)].map((_, i) => (
