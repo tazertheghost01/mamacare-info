@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "MamaCare — Download",
   description: "Get the app on iOS and Android",
+  icons: {
+    icon: "/logo.png", // Points to public/logo.png
+  },
 };
 
 export default function RootLayout({
